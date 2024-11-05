@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:recruitment_app_pro_multimedia/screens/main_screen.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
-  );
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const MyApp());
 }
 
