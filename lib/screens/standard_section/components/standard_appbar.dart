@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 /// Standard Appbar after video ends
@@ -8,12 +10,13 @@ class StandardAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Material(
+    return Material(
       color: Colors.white,
       child: SafeArea(
         child: ListTile(
-          leading: Icon(Icons.menu),
-          title: Center(
+          leading: const Icon(Icons.menu),
+          minTileHeight: Platform.isAndroid ? 100 : null,
+          title: const Center(
             child: Padding(
               padding: EdgeInsets.only(left: 32.0),
               child: Text(
@@ -26,7 +29,7 @@ class StandardAppbar extends StatelessWidget {
               ),
             ),
           ),
-          trailing: Row(
+          trailing: const Row(
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             children: [
